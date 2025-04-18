@@ -3,11 +3,11 @@
     <item
         android:id="@+id/profile"
         android:title="Profile"
-        android:icon="@drawable/accueil"/>
+        android:icon="@drawable/utilisateur"/>
     <item
         android:id="@+id/home"
         android:title="Home"
-        android:icon="@drawable/utilisateur"/>
+        android:icon="@drawable/accueil"/>
     <item
         android:id="@+id/settings"
         android:title="Settings"

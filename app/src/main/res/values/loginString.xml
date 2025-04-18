@@ -1,0 +1,8 @@
+<resources>
+    <string name="lablePageLogin">Login</string>
+    <string name="labEmail">Email</string>
+    <string name="labPassword">Password</string>
+    <string name="lableForgetPassword">Forget password ?</string>
+    <string name="lableBtnLogin">Login In</string>
+
+</resources>
