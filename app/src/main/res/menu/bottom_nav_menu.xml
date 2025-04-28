@@ -5,9 +5,13 @@
         android:title="accueil"
         android:icon="@drawable/accueil"/>
     <item
-        android:id="@+id/utilisateur"
-        android:title="Utilisateur"
+        android:id="@+id/patient"
+        android:title="Patient"
         android:icon="@drawable/utilisateur"/>
+    <item
+        android:id="@+id/rendezvous"
+        android:title="Rendez-vous"
+        android:icon="@drawable/agenda"/>
     <item
         android:id="@+id/medicament"
         android:title="medicament"
