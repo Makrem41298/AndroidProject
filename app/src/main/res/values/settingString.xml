@@ -1,0 +1,9 @@
+<resources>
+    <string name="Settings">Settings</string>
+    <string name="ProfilSetting">Profil Setting</string>
+    <string name="PasswordManager">Password Manager</string>
+    <string name="DeleteAccount">Delete Account</string>
+
+
+
+</resources>
