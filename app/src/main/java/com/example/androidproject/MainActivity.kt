@@ -23,8 +23,10 @@ class MainActivity : AppCompatActivity() {
         bottomNavigationView.setOnNavigationItemSelectedListener { menuItem ->
             when (menuItem.itemId) {
                 R.id.accueil -> setCurrentFragment(FirstFragment())
-                R.id.utilisateur->  setCurrentFragment(profilFragment())
+                R.id.patient->  setCurrentFragment(patientFragment())
                 R.id.medicament->setCurrentFragment(MedicamentFragment())
+                R.id.rendezvous->setCurrentFragment(RendezVousFragment())
+
                 R.id.parametre->setCurrentFragment(ParametreFragment())
             }
             true
