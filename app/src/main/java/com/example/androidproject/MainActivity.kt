@@ -23,7 +23,11 @@ class MainActivity : AppCompatActivity() {
         bottomNavigationView.setOnNavigationItemSelectedListener { menuItem ->
             when (menuItem.itemId) {
                 R.id.accueil -> setCurrentFragment(FirstFragment())
-                R.id.patient->  setCurrentFragment(patientFragment())
+                R.id.patient->  {
+
+
+                    setCurrentFragment(patientFragment())
+                }
                 R.id.medicament->setCurrentFragment(MedicamentFragment())
                 R.id.rendezvous->setCurrentFragment(RendezVousFragment())
 
@@ -31,6 +35,16 @@ class MainActivity : AppCompatActivity() {
             }
             true
         }
+        val email = intent.getStringExtra("Email")
+        val password = intent.getStringExtra("Password")
+
+        val fragmentInfo = PatientInfoFragment()
+        val bundle = Bundle().apply{
+            putString("Email",email)
+            putString("Password",password)
+        }
+        fragmentInfo.arguments = bundle
+
     }
 
     private fun setCurrentFragment(fragment: Fragment) {
