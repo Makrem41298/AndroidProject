@@ -28,12 +28,12 @@ class AuthActivity : AppCompatActivity() {
             if(email.isNotEmpty() && password.isNotEmpty()){
                 Intent(this,MainActivity::class.java).apply {
                     putExtra("Email", email)
-                    putExtra("Password", email)}
-                    startActivity(intent)
+                    putExtra("Password", email)
+                   startActivity(this)
                     finish()
 
 
-                 }else{
+               } }else{
                     Toast.makeText(this, "Veuillez remplir tous les champs", Toast.LENGTH_SHORT).show()
                 }
             }
