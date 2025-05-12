@@ -29,12 +29,31 @@
                 android:textColor="#0033CC"
                 android:textSize="16sp"
                 android:textStyle="bold" />
+            <TextView
+                android:id="@+id/PatientNumero"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="+33612345678"
+                android:textColor="#0033CC"
+                android:textSize="16sp"
+                android:textStyle="bold" />
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:layout_marginTop="8dp">
+                <Button
+                    android:id="@+id/btnCall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Appeler"
+                    android:textSize="12sp"
+                    android:backgroundTint="#1A73E8"
+                    android:textColor="@android:color/white" />
+                <View
+                    android:layout_width="8dp"
+                    android:layout_height="0dp" />
 
                 <Button
                     android:id="@+id/btnInfo"

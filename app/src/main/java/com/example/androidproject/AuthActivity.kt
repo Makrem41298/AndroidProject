@@ -26,14 +26,15 @@ class AuthActivity : AppCompatActivity() {
             val email = findViewById<EditText>(R.id.InputEmail).text.toString()
             val password = findViewById<EditText>(R.id.InputPassword).text.toString()
             if(email.isNotEmpty() && password.isNotEmpty()){
-                Intent(this,MainActivity::class.java).apply {
+              val intent =  Intent(this,MainActivity::class.java).apply {
                     putExtra("Email", email)
-                    putExtra("Password", email)
-                   startActivity(this)
+                    putExtra("Password", password)}
+
+                    startActivity(intent)
                     finish()
 
 
-               } }else{
+                 }else{
                     Toast.makeText(this, "Veuillez remplir tous les champs", Toast.LENGTH_SHORT).show()
                 }
             }
@@ -41,4 +42,3 @@ class AuthActivity : AppCompatActivity() {
 
 
     }
-}

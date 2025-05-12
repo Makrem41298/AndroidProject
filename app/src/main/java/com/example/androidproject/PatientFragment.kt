@@ -1,7 +1,9 @@
 package com.example.androidproject
 
+import android.content.Intent
 import android.os.Build
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -20,7 +22,6 @@ class PatientFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_patient, container, false)
     }
 
@@ -33,16 +34,30 @@ class PatientFragment : Fragment() {
         patientList.add(Patient(
             firstName = "John",
             lastName = "Doe",
+            numero ="40 536 516",
+
             birthDate = LocalDate.of(1990, 1, 12),
             gender = Gender.MALE // Utilisation correcte de l'enum
         ))
         patientList.add(Patient(
             firstName = "samah",
             lastName = "Doe",
+            numero ="40 536 516",
             birthDate = LocalDate.of(1990, 1, 12),
-            gender = Gender.FEMALE // Utilisation correcte de l'enum
+            gender = Gender.FEMALE
         ))
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
-        recyclerView.adapter = PatientAdapter(patientList)  // Assume you have a PatientAdapter class
+        recyclerView.adapter = PatientAdapter(patientList) {
+            patient ->
+            Log.d("PATIENT_CLICK", "Clicked: ${patient.firstName}") // ← Ajouté
+
+            val intent = Intent(requireContext(),InformationPatientActivity::class.java)
+            intent.putExtra("firstName",patient.firstName)
+            intent.putExtra("lastName",patient.lastName)
+            intent.putExtra("numero",patient.numero)
+
+            startActivity(intent)
+        } // Assume you have a PatientAdapter class
+
     }
 }
