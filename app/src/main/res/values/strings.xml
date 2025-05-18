@@ -2,4 +2,12 @@
     <string name="app_name">Android Project</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <!-- Add these entries to strings.xml -->
+    <string name="gender_prompt">Select your gender</string>
+    <string-array name="gender_options">
+        <item>Choisir le genre</item>
+        <item>Homme</item>
+        <item>Femme</item>
+    </string-array>
+
 </resources>

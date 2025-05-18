@@ -6,7 +6,6 @@ enum class Gender {
     MALE,
     FEMALE
 }
-
 class Patient(
     var firstName: String? = null,
     var lastName: String? = null,

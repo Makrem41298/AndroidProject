@@ -18,13 +18,19 @@ class MainActivity : AppCompatActivity() {
         if (savedInstanceState == null) {
             setCurrentFragment(FirstFragment()) // ✅ Now resolves correctly
         }
+        when (intent.getStringExtra("targetFragment")) {
+            "appointment" -> {
+                bottomNavigationView.selectedItemId = R.id.rendezvous
+                setCurrentFragment(AppointmentFragment())
+            }
+        }
 
         bottomNavigationView.setOnNavigationItemSelectedListener { menuItem ->
             when (menuItem.itemId) {
                 R.id.accueil -> setCurrentFragment(FirstFragment())
                 R.id.patient->  setCurrentFragment(PatientFragment())
                 R.id.medicament->setCurrentFragment(MedicamentFragment())
-                R.id.rendezvous->setCurrentFragment(RendezVousFragment())
+                R.id.rendezvous->setCurrentFragment(AppointmentFragment())
 
                 R.id.parametre->setCurrentFragment(ParametreFragment())
             }

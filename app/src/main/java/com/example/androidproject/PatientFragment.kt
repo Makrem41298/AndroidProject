@@ -20,7 +20,6 @@ class PatientFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_patient, container, false)
     }
 
@@ -30,19 +29,24 @@ class PatientFragment : Fragment() {
         val recyclerView = view.findViewById<RecyclerView>(R.id.recyclerView)
 
         val patientList = mutableListOf<Patient>()
-        patientList.add(Patient(
-            firstName = "John",
-            lastName = "Doe",
-            birthDate = LocalDate.of(1990, 1, 12),
-            gender = Gender.MALE // Utilisation correcte de l'enum
-        ))
-        patientList.add(Patient(
-            firstName = "samah",
-            lastName = "Doe",
-            birthDate = LocalDate.of(1990, 1, 12),
-            gender = Gender.FEMALE // Utilisation correcte de l'enum
-        ))
+        patientList.add(
+            Patient(
+                firstName = "John",
+                lastName = "Doe",
+                birthDate = LocalDate.of(1990, 1, 12),
+                gender = Gender.MALE // Utilisation correcte de l'enum
+            )
+        )
+        patientList.add(
+            Patient(
+                firstName = "samah",
+                lastName = "Doe",
+                birthDate = LocalDate.of(1990, 1, 12),
+                gender = Gender.FEMALE
+            )
+        )
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
-        recyclerView.adapter = PatientAdapter(patientList)  // Assume you have a PatientAdapter class
+        recyclerView.adapter =
+            PatientAdapter(patientList)  // Assume you have a PatientAdapter class
     }
 }
