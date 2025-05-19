@@ -3,23 +3,20 @@ package com.gfg.recyclerview_kotlin
 import java.time.LocalDate
 
 enum class Gender {
-    MALE,
-    FEMALE
+    MALE, FEMALE
 }
-class Patient(
-    var firstName: String? = null,
-    var lastName: String? = null,
-    var birthDate: LocalDate? = null,
-    var gender: Gender = Gender.MALE
+
+data class Patient(
+    val firstName: String,
+    val lastName: String,
+    val birthDate: LocalDate,
+    val gender: Gender,
+    val phoneNumber: String
 ) {
-    // Suppression du constructeur inutile
-    // Utilisation d'un constructeur principal avec paramètres optionnels
+    fun getFullName(): String =
+        listOf(firstName, lastName)
+            .filter { it.isNotBlank() }
+            .joinToString(" ")
 
-    fun getFullName(): String {
-        return "$firstName $lastName".trim()
-    }
-
-    override fun toString(): String {
-        return getFullName()
-    }
+    override fun toString(): String = getFullName()
 }

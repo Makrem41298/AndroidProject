@@ -18,7 +18,6 @@ class AppointmentAdapter(private val appointmentList: List<Appointment>) :
         val dateTimeTextView: TextView = itemView.findViewById(R.id.tvDateTime)
         val statusTextView: TextView = itemView.findViewById(R.id.tvStatus)
         val patientIdTextView: TextView = itemView.findViewById(R.id.tvPatientId)
-        val consultationIdTextView: TextView = itemView.findViewById(R.id.tvConsultationId)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AppointmentViewHolder {
@@ -38,8 +37,7 @@ class AppointmentAdapter(private val appointmentList: List<Appointment>) :
 
         holder.dateTimeTextView.text = dateTime
         holder.statusTextView.text = (appointment.status ?: "Unknown").toString()
-        holder.patientIdTextView.text = "Patient ID: ${appointment.patientId}"
-        holder.consultationIdTextView.text = "Consultation ID: ${appointment.consultation_id}"
+        holder.patientIdTextView.text = "Patient Name: ${appointment.PatientName}"
     }
 
     override fun getItemCount() = appointmentList.size

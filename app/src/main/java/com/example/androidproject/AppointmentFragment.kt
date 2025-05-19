@@ -29,9 +29,9 @@ class AppointmentFragment : Fragment() {
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
 
         val appointments = listOf(
-            Appointment(1, 101, 201, LocalDateTime.now().plusDays(1), Status.accept),
-            Appointment(2, 102, 202, LocalDateTime.now().plusDays(2), Status.cancel),
-            Appointment(3, 103, 203, LocalDateTime.now().plusDays(3), Status.suspend)
+            Appointment(1, "makrem abderrazek",  LocalDateTime.now().plusDays(1), Status.accept),
+            Appointment(2, "samah ben abdalaha", LocalDateTime.now().plusDays(2), Status.cancel),
+            Appointment(3, "mouhamed test",  LocalDateTime.now().plusDays(3), Status.suspend)
         )
 
         val adapter = AppointmentAdapter(appointments)

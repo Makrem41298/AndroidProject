@@ -12,8 +12,7 @@ enum class Status {
 
 class Appointment(
     var id: Long = 0,
-    var patientId: Long = 0,
-    var consultation_id: Long = 0,
+    var PatientName: String = "",
     var dateTime: LocalDateTime? = null,
     var status: Status? = null
 )
