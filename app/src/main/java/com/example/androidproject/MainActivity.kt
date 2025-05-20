@@ -25,6 +25,7 @@ class MainActivity : AppCompatActivity() {
                 R.id.patient->  setCurrentFragment(PatientFragment())
                 R.id.medicament->setCurrentFragment(MedicamentFragment())
                 R.id.rendezvous->setCurrentFragment(RendezVousFragment())
+                R.id.first_name->setCurrentFragment(ParametreFragment())
 
                 R.id.parametre->setCurrentFragment(ParametreFragment())
             }
