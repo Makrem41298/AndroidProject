@@ -83,15 +83,6 @@
                     android:textColor="#333333"
                     android:layout_marginBottom="8dp"/>
 
-                <!-- Email -->
-                <TextView
-                    android:id="@+id/email"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Email : marie.dupont@example.com"
-                    android:textSize="18sp"
-                    android:textColor="#333333"
-                    android:layout_marginBottom="8dp"/>
 
                 <!-- Téléphone -->
                 <TextView
@@ -103,7 +94,6 @@
                     android:textColor="#333333"
                     android:layout_marginBottom="8dp"/>
 
-                <!-- Date de Naissance -->
                 <TextView
                     android:id="@+id/birth_date"
                     android:layout_width="wrap_content"

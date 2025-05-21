@@ -15,21 +15,24 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
         val bottomNavigationView = binding.bottomNavigationView
 
-        // Set default fragment on first launch
         if (savedInstanceState == null) {
-            setCurrentFragment(FirstFragment())
+            setCurrentFragment(FirstFragment()) // ✅ Now resolves correctly
+        }
+        when (intent.getStringExtra("targetFragment")) {
+            "appointment" -> {
+                bottomNavigationView.selectedItemId = R.id.rendezvous
+                setCurrentFragment(AppointmentFragment())
+            }
         }
 
-        // Handle intent extra to open specific fragment
-
-
-        // Bottom navigation logic
         bottomNavigationView.setOnNavigationItemSelectedListener { menuItem ->
             when (menuItem.itemId) {
                 R.id.accueil -> setCurrentFragment(FirstFragment())
-                R.id.patient -> setCurrentFragment(PatientFragment())
-                R.id.medicament -> setCurrentFragment(MedicamentFragment())
-                R.id.parametre -> setCurrentFragment(ParametreFragment())
+                R.id.patient->  setCurrentFragment(PatientFragment())
+                R.id.medicament->setCurrentFragment(MedicamentFragment())
+                R.id.rendezvous->setCurrentFragment(AppointmentFragment())
+
+                R.id.parametre->setCurrentFragment(ParametreFragment())
             }
             true
         }

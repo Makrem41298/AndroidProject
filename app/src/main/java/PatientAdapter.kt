@@ -18,7 +18,6 @@ class PatientAdapter(
 
     class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val patientName: TextView = itemView.findViewById(R.id.PatientName)
-        val patientNumero: TextView = itemView.findViewById(R.id.PatientNumero)
         val infoButton: Button = itemView.findViewById(R.id.btnInfo)
         val callButton: Button = itemView.findViewById(R.id.btnCall)
     }
@@ -33,7 +32,7 @@ class PatientAdapter(
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val patientItem = patientList[position]
         holder.patientName.text = "${patientItem.firstName} ${patientItem.lastName}"
-        holder.patientNumero.text = patientItem.phoneNumber
+
 
         holder.callButton.setOnClickListener {
             val phoneNumber = patientItem.phoneNumber.trim()

@@ -64,6 +64,10 @@ class PatientFragment : Fragment() {
             intent.putExtra("firstName", patient.firstName)
             intent.putExtra("lastName", patient.lastName)
             intent.putExtra("numero", patient.phoneNumber)
+            intent.putExtra("gender", patient.gender.name)
+            intent.putExtra("data", patient.birthDate.toString())
+
+
             startActivity(intent)
         }
 
